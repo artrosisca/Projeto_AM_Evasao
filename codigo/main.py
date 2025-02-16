@@ -115,14 +115,24 @@ def analise_evasao(df):
     """
     print("\n[4/10] Análise de evasão...")
     
-    # Taxa de evasão por período
-    evasao_periodo = df.groupby('Período do Aluno')['Situação Atual do Aluno'].mean().reset_index()
+    # Criar uma coluna binária para evasão (se ainda não existir)
+    situacoes_evasao = ["Reprovado por Nota/Frequência", "Reprovado por Nota", "Reprovado por Frequência", "Reprovado em Exame de Suficiência", "Reprovado", "Cancelado"]
+    df['Evasao'] = df['Situação Disc.'].apply(lambda x: 1 if x in situacoes_evasao else 0)
+
+    # Calcular a taxa de evasão por período
+    evasao_periodo = df.groupby('Período do Aluno')['Evasao'].mean().reset_index()
+
+    # Verificar valores
+    print("\nVerificação de dados:")
+    print(evasao_periodo.head())
+
+    # Plotar gráfico
     plt.figure(figsize=(12, 6))
-    sns.barplot(x='Período do Aluno', y='Situação Atual do Aluno', data=evasao_periodo)
+    sns.barplot(x='Período do Aluno', y='Evasao', data=evasao_periodo)
     plt.title('Taxa de Evasão por Período', fontsize=14)
     plt.xlabel('Período', fontsize=12)
     plt.ylabel('Taxa de Evasão', fontsize=12)
-    plt.ylim(0, 1)
+    plt.ylim(0, 1)  # Garantir escala entre 0 e 1
     plt.tight_layout()
     plt.savefig('relatorio/graficos/evasao_periodo.png')
     plt.close()
