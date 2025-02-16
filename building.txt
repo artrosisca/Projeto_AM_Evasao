@@ -1,0 +1,4 @@
+1. Para efetuar a instalação do projeto, primeiro necessita-se do python instalado.
+2. Em seguida, crie uma variável de ambiente virtual na raíz do projeto com o comando py -m venv venv .
+3. Logo após ative a "venv" com o comando .\venv\Scripts\activate .
+4. Por fim, utilize o comando pip install -r requirements.txt para instalar as dependências do projeto dentro dessa variável de ambiente.
