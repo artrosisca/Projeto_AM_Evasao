@@ -1,0 +1,19 @@
+Feature,Importância,Modelo
+Coeficiente,3.2263236793151155,Logistic Regression
+Nota Enem,2.3511273488652122,Logistic Regression
+Idade,2.9725510142970304,Logistic Regression
+Freq.(%),0.10172836749528417,Logistic Regression
+Média da Turma,0.108851869597518,Logistic Regression
+Sexo_M,0.01901383605607025,Logistic Regression
+Coeficiente,1.0,Decision Tree
+Nota Enem,0.0,Decision Tree
+Idade,0.0,Decision Tree
+Freq.(%),0.0,Decision Tree
+Média da Turma,0.0,Decision Tree
+Sexo_M,0.0,Decision Tree
+Coeficiente,0.4440840339492662,Random Forest
+Nota Enem,0.15747721347475735,Random Forest
+Idade,0.38091797349261264,Random Forest
+Freq.(%),0.0074671625125517305,Random Forest
+Média da Turma,0.00981280125249625,Random Forest
+Sexo_M,0.00024081531831580426,Random Forest
